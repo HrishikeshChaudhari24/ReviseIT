@@ -20,6 +20,10 @@ pipeline {
         }
 
         stage('Build') {
+             environment {
+                MONGODB_URI = credentials('MONGODB_URI')
+                GROQ_API_KEY = credentials("GROQ_API_KEY")
+            }
             steps {
                 bat 'npm run build'
             }
