@@ -29,10 +29,6 @@ pipeline {
             }
         }
 
-        stage('Run Application') {
-            steps {
-                bat 'nohup npm start &'
-            }
-        }
+       
     }
 }
