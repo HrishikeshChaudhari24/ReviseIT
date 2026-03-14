@@ -7,19 +7,19 @@ pipeline {
 
     stages {
 
-        stage('Checkout Code') {
+        stage('Checkout') {
             steps {
-                git 'git@github.com:HrishikeshChaudhari24/ReviseIT.git'
+                checkout scm
             }
         }
 
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
+                sh 'npm ci'
             }
         }
 
-        stage('Build Application') {
+        stage('Build') {
             steps {
                 sh 'npm run build'
             }
